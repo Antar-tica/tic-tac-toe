@@ -44,6 +44,8 @@ function updatePlayerScore (player) {
     }
 }
 
+//function to reset grid
+
 
 //Event Listener for Div boxes to add X or O 
 playerChooser();

@@ -3,8 +3,13 @@ body {
     background-size: 900px 400px;
     max-width: inherit;
     background-attachment: fixed;
-    background-size: 100% 100%;;
-
+    background-size: 100% 100%;
+    user-select: none;
+}
+main {
+    width: 960px;
+    position: relative;
+    margin: 0 auto;
 }
 h1 {
     text-align: center;
@@ -20,8 +25,8 @@ h1 {
     width: 400px;
     height: 400px;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    gap: 2px
-
+    gap: 2px;
+    margin-bottom: 20px; 
 }
 .box {
     border: 3px solid rgb(0, 0, 0);
@@ -32,10 +37,36 @@ h1 {
     font-size: 80px;
     font-family: 'Permanent Marker', cursive;
 }
-.stickfigure1 {
+button {
+    margin: 0 auto;
+    display: block;
+    width: 110px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    background-color: transparent;
+}
+#stickfigure1 {
     display: flex;
-    justify-content: left;
-    width: 10px;
-    height: 10px
+    position:absolute;
+    right: 90px;
+    top: 80px;
+    width: 100px;
+    height: 50px;
+    margin-left: 15%;
+}
+#p1 {
+    position: absolute;
+    left: 205px;
+    top: 650px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+
+}
+#p2 {
+    position: absolute;
+    right: 210px;
+    top: 650px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
 }
 /* style */
