@@ -7,6 +7,8 @@ let b6 = document.getElementById("b6").value;
 let b7 = document.getElementById("b7").value;
 let b8 = document.getElementById("b8").value;
 let b9 = document.getElementById("b9").value;
+let player1Score = document.getElementById("player1Score");
+let player2Score = document.getElementById("player2Score");
 
 let divEntry = document.getElementsByClassName("box");
 
@@ -30,26 +32,40 @@ function playerChooser() {
     }
 }
 
-// //Player Tracker
-// function playerTracker () {
-// }
+//Update Player Score
+function updatePlayerScore (player) {
+    if (player === player1) {
+        let currentScore = Number(player1Score.innerText);
+        player1Score.innerHTML = currentScore + 1
+    }
+    if (player === player2) {
+        let currentScore = Number(player2Score.innerText);
+        player2Score.innerHTML = currentScore + 1
+    }
+}
+
 
 //Event Listener for Div boxes to add X or O 
-//NEED TO ADD A STOP CONDITION AFTER COUNTER++ to PREVENT CHANGES IN SAME DIV
 playerChooser();
+let currentPlayer = player1;
 for (let i = 0; i < divEntry.length; i++) {
     divEntry[i].addEventListener("click", (e) => {
-        if (counter1 <= counter2) {
-            divEntry[i].innerHTML = player1;
-            counter1++;
-        } else if (counter1 > counter2) {
-            if (divEntry.textContent !== 'X' && divEntry.textContent !== 'O') {
-                divEntry[i].innerHTML = player2
-                counter2++
-            }
+        const isEmpty = !divEntry[i].textContent;
+        if (!isEmpty){
+        return;
         }
+        if (currentPlayer === player1) {
+            divEntry[i].innerHTML = player1;
+            currentPlayer = player2;
+        } else if (currentPlayer === player2) {
+            divEntry[i].innerHTML = player2;
+            currentPlayer = player1;     
+        }
+
+        winChecker();
     })
 }
+
 
 //Win Checker - loop through all divs
 let winConditions = [
@@ -62,7 +78,6 @@ let winConditions = [
     [0, 4, 8],
     [6, 4, 2]
 ]
-
 
 function winChecker() {
     for (let i = 0; i < winConditions.length; i++) {
@@ -80,8 +95,10 @@ function winChecker() {
             } 
         } 
         if (sumX === 3) {
+            updatePlayerScore('X');
             alert('X is the Winner')
         } else if (sumO === 3) {
+            updatePlayerScore('O');
             alert ('O is the Winner')
         }
     } 
