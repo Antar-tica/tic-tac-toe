@@ -54,6 +54,51 @@ button {
     height: 50px;
     margin-left: 15%;
 }
+#stickfigurePush {
+    display: flex;
+    position:absolute;
+    left: 59px;
+    top: 320px;
+    width: 80px;
+    height: 100px;
+    margin-left: 15%;
+}
+#stickfigurePush2 {
+    display: flex;
+    position:absolute;
+    right: 206px;
+    top: 490px;
+    width: 80px;
+    height: 100px;
+    margin-left: 15%;
+}
+#stickfigureFight1 {
+    display: flex;
+    position:absolute;
+    left: 80px;
+    top: 720px;
+    width: 70px;
+    height: 100px;
+    margin-left: 15%;
+}
+#stickfigureFight2 {
+    display: flex;
+    position:absolute;
+    right: 220px;
+    top: 720px;
+    width: 80px;
+    height: 100px;
+    margin-left: 15%;
+}
+#stickfigureThink {
+    display: flex;
+    position:absolute;
+    left: -40px;
+    top: 320px;
+    width: 80px;
+    height: 100px;
+    margin-left: 15%;
+}
 #p1 {
     position: absolute;
     left: 205px;
@@ -69,4 +114,10 @@ button {
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
 }
-/* style */
+#winNotifier {
+    position: absolute;
+    right: 340px;
+    top: 700px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 35px;
+}
